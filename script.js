@@ -18,7 +18,7 @@ function createGameArea(rows) {
             const divColumn = document.createElement('div');
             divColumn.className="column"+j;
             divColumn.style.setProperty('flex', 1);
-            divColumn.addEventListener('mouseenter',function(e){
+            divColumn.addEventListener('mouseover',function(e){
                 e.target.style.setProperty('background-color','black');
             });
             divRow.appendChild(divColumn);
@@ -32,7 +32,7 @@ createGameArea(rowCount);
 const gameButtons = document.getElementById("gameButtons");
 const shakeButton = document.createElement('button');
 shakeButton.className = "shakeButton";
-shakeButton.textContent = "SHAKE!";
+shakeButton.textContent = "SHAKE";
 gameButtons.appendChild(shakeButton);
 const setSizeButton = document.createElement('button');
 setSizeButton.className = "setSizeButton";
