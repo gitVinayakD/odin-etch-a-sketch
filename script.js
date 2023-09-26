@@ -17,8 +17,10 @@ function createGameArea(rows) {
         for (let j=0; j<rows; j++){
             const divColumn = document.createElement('div');
             divColumn.className="column"+j;
-            divColumn.style.setProperty('border-style','solid');
             divColumn.style.setProperty('flex', 1);
+            divColumn.addEventListener('mouseenter',function(e){
+                e.target.style.setProperty('background-color','black');
+            });
             divRow.appendChild(divColumn);
         }
     }
@@ -40,10 +42,12 @@ gameButtons.appendChild(setSizeButton);
 
 //adds click listener to resize which recreates board based on input size
 setSizeButton.addEventListener('click', () => {
-    createGameArea(parseInt(prompt("How many boxes tall and wide?","16")));
+    createGameArea(rowCount=parseInt(prompt("How many boxes tall and wide?","16")));
     }
 );
 
 //add click listener for shake here 
-
-//event listeners for Row/Column divs
+shakeButton.addEventListener('click', () => {
+    createGameArea(rowCount);
+    }
+);
